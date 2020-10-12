@@ -1,5 +1,6 @@
 <?php
 
+use App\Router;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
@@ -10,4 +11,4 @@ $twig = new Environment($loader, [
     'debug' => true,
 ]);
 
-echo $twig->render('index.html.twig');
+echo (new Router($twig))->run();
