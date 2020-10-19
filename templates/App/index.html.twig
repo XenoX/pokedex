@@ -3,5 +3,13 @@
 {% block title %}Index - {{ parent() }}{% endblock %}
 
 {% block body %}
-    <p>Je suis un text du fichier index.html</p>
+    <h1>Liste des pokemons capturés</h1>
+    <hr>
+    <div class="row">
+        {% for pokemon in pokemons %}
+            <div class="col-3 mb-4">
+                {% include 'Partials/_pokemon-card.html.twig' with {'pokemon': pokemon} %}
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

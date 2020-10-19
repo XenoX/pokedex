@@ -3,6 +3,7 @@
 use App\Router;
 use Symfony\Component\Dotenv\Dotenv;
 use Twig\Environment;
+use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
 
 require '../vendor/autoload.php';
@@ -14,5 +15,6 @@ $loader = new FilesystemLoader(__DIR__.'/../templates');
 $twig = new Environment($loader, [
     'debug' => true,
 ]);
+$twig->addExtension(new DebugExtension());
 
 echo (new Router($twig))->run();

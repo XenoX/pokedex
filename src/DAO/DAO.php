@@ -28,6 +28,10 @@ abstract class DAO
         $result = $this->database->prepare($sql);
         $result->execute($params);
 
+        if (preg_match('/^INSERT INTO/i', $sql)) {
+            return $this->database->lastInsertId();
+        }
+
         return $result;
     }
 }

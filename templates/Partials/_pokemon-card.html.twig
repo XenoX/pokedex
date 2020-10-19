@@ -1,0 +1,12 @@
+<div class="card">
+    <img src="https://www.pokepedia.fr/images/e/ef/Bulbizarre-RFVF.png" class="card-img-top" alt="">
+    <div class="card-body">
+        <h5 class="card-title">{{ pokemon.name }}</h5>
+        <p class="card-text">
+            <b>Numéro</b> : {{ pokemon.number }}<br>
+            <b>Type(s)</b> : {{ pokemon.types|join(', ') }}<br>
+            {{ pokemon.isCaptured ? 'Pokemon capturé' : 'Pas encore capturé' }}<br><br>
+            <span class="text-muted">{{ pokemon.seenAt|date }}</span><br>
+        </p>
+    </div>
+</div>
